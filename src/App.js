@@ -10,7 +10,7 @@ class App extends Component {
 
   state = {
     sounds: [
-      { id: '11', title: 'birds', mp3File: mainBirds, volume: '0', playStatus: 'false'},
+      { id: '11', title: 'bairds', mp3File: mainBirds, volume: '0', playStatus: 'false'},
       { id: '22', title: 'rain', mp3File: mainRain, volume: '0', playStatus: 'false'},
       { id: '33', title: 'waves', mp3File: mainWaves, volume: '0', playStatus: 'false'}
     ]
