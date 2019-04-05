@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import mainBirds from './assets/main-birds.mp4';
 import mainRain from './assets/main-rain.mp4';
-import mainBells from './assets/main-bells.mp4';
+import mainWaves from './assets/main-waves.mp4';
 
 import Sound from './Sound/Sound';
 
@@ -12,7 +12,7 @@ class App extends Component {
     sounds: [
       { id: '11', title: 'birds', mp3File: mainBirds, volume: '0', playStatus: 'false'},
       { id: '22', title: 'rain', mp3File: mainRain, volume: '0', playStatus: 'false'},
-      { id: '33', title: 'bells', mp3File: mainBells, volume: '0', playStatus: 'false'}
+      { id: '33', title: 'waves', mp3File: mainWaves, volume: '0', playStatus: 'false'}
     ]
   };
 
