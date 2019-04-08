@@ -7,21 +7,15 @@ const Sound = (props) => {
             <div className="SoundSlider">
                 <span>
                     <p>{props.volume}</p>
-                    <input type="range" onChange={props.changed} min="0" max="100" defaultValue={props.volume}></input>
+                    <input type="range" onChange={props.changed} min="0" max="10" defaultValue={props.volume}></input>
                 </span>
             </div>
             <div>
-                <audio preload="auto" loop controls autoPlay>
+                <audio id={props.id} preload="auto" loop>
                     <source 
                         className="mp3" 
                         src={props.source}
                         type="audio/mp4" />
-                </audio>
-                <audio preload="auto">
-                    <source 
-                        className="gluemp3" 
-                        src="" 
-                        type="audio/mp3" />
                 </audio>
             </div>
         </div>

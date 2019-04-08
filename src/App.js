@@ -27,6 +27,13 @@ class App extends Component {
 
     sound.volume = event.target.value;
 
+    let sd = document.getElementById(id); 
+
+    if (sound.volume>0) {
+      sd.play();
+      sd.volume = sound.volume/10; 
+    } else sd.pause();
+
     const sounds = [...this.state.sounds];
     sounds[soundIndex] = sound;
     this.setState({sounds: sounds});
@@ -39,6 +46,7 @@ class App extends Component {
           return <Sound
             title = {sound.title}
             key = {sound.id}
+            id = {sound.id}
             source = {sound.mp3File}
             volume = {sound.volume}
             changed = {(event) => this.volumeChangeHandler( event, sound.id)} />
