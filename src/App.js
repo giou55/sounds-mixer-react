@@ -9,7 +9,7 @@ import Sound from './Sound/Sound';
 class App extends Component {
 
   state = {
-    playAllSongs: false,
+    playAllSounds: false,
     sounds: [
       { id: '11', title: 'birds', mp3File: mainBirds, volume: '0', playStatus: false},
       { id: '22', title: 'rain', mp3File: mainRain, volume: '0', playStatus: false},
@@ -30,7 +30,7 @@ class App extends Component {
 
     let sd = document.getElementById(id); 
 
-    if (sound.volume>0 && this.state.playAllSongs) {
+    if (sound.volume > 0 && this.state.playAllSounds) {
       sd.play();
       sd.volume = sound.volume/10; 
     } else sd.pause();
@@ -40,11 +40,18 @@ class App extends Component {
     this.setState({sounds: sounds});
   }
 
-  playSongsHandler = () => {
-    const doesPlay = this.state.playAllSongs;
-    this.setState({playAllSongs: !doesPlay});
+  playAllSounds(){
+    let sound = document.getElementById(22); 
+    sound.play();
   }
 
+  playSoundsHandler = () => {
+    const doesPlay = this.state.playAllSounds;
+    this.setState({playAllSounds: !doesPlay});
+    if (this.state.playAllSounds){
+      this.playAllSounds();
+    }
+  }
 
   render() {
     let sounds = (
@@ -63,7 +70,7 @@ class App extends Component {
     );
     return (
       <div className="App">
-        <button className="playButton" onClick={this.playSongsHandler}>PLAY <i class='fas fa-play'></i></button>
+        <button className="playButton" onClick={this.playSoundsHandler}>PLAY <i className='fas fa-play'></i></button>
         {sounds}
       </div>
 
