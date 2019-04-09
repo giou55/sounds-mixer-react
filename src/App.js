@@ -9,10 +9,11 @@ import Sound from './Sound/Sound';
 class App extends Component {
 
   state = {
+    playAllSongs: false,
     sounds: [
-      { id: '11', title: 'birds', mp3File: mainBirds, volume: '0', playStatus: 'false'},
-      { id: '22', title: 'rain', mp3File: mainRain, volume: '0', playStatus: 'false'},
-      { id: '33', title: 'waves', mp3File: mainWaves, volume: '0', playStatus: 'false'}
+      { id: '11', title: 'birds', mp3File: mainBirds, volume: '0', playStatus: false},
+      { id: '22', title: 'rain', mp3File: mainRain, volume: '0', playStatus: false},
+      { id: '33', title: 'waves', mp3File: mainWaves, volume: '0', playStatus: false}
     ]
   };
 
@@ -29,7 +30,7 @@ class App extends Component {
 
     let sd = document.getElementById(id); 
 
-    if (sound.volume>0) {
+    if (sound.volume>0 && this.state.playAllSongs) {
       sd.play();
       sd.volume = sound.volume/10; 
     } else sd.pause();
@@ -38,6 +39,12 @@ class App extends Component {
     sounds[soundIndex] = sound;
     this.setState({sounds: sounds});
   }
+
+  playSongsHandler = () => {
+    const doesPlay = this.state.playAllSongs;
+    this.setState({playAllSongs: !doesPlay});
+  }
+
 
   render() {
     let sounds = (
@@ -56,7 +63,7 @@ class App extends Component {
     );
     return (
       <div className="App">
-        <h1>You'll listen some sounds!</h1>
+        <button className="playButton" onClick={this.playSongsHandler}>PLAY <i class='fas fa-play'></i></button>
         {sounds}
       </div>
 

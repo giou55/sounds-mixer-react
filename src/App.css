@@ -4,3 +4,7 @@
   padding: 2%; 
   width: 92%;
 }
+.playButton {
+  font-size:34px;
+  color:green;
+}
