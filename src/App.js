@@ -57,7 +57,7 @@ class App extends Component {
     );
     return (
       <div className="App">
-        <button className="playButton" onClick={this.playAllSoundsHandler}>PLAY <i className='fas fa-play'></i></button>
+        <button className="playButton" onClick={this.playAllSoundsHandler}>PLAY LOUND <i className='fas fa-play'></i></button>
         {sounds}
       </div>
 
