@@ -25,11 +25,14 @@ class App extends Component {
       ...this.state.sounds[soundIndex]
     };
     sound.volume = event.target.value;
+
     let sd = document.getElementById(id); 
     if (sound.volume > 0 && this.state.playAllSounds) {
       sd.play();
       sd.volume = sound.volume/10; 
-    } else sd.pause();
+    } else {
+      sd.pause();
+    }
     const sounds = [...this.state.sounds];
     sounds[soundIndex] = sound;
     this.setState({sounds: sounds});
@@ -50,6 +53,7 @@ class App extends Component {
             id = {sound.id}
             source = {sound.mp3File}
             volume = {sound.volume}
+            doesplay = {sound.playStatus}
             changed = {(event) => this.volumeChangeHandler( event, sound.id)} />
 
         } )}
@@ -57,7 +61,7 @@ class App extends Component {
     );
     return (
       <div className="App">
-        <button className="playButton" onClick={this.playAllSoundsHandler}>PLAY LOUND <i className='fas fa-play'></i></button>
+        <button className="playButton" onClick={this.playAllSoundsHandler}>PLAY <i className='fas fa-play'></i></button>
         {sounds}
       </div>
 
