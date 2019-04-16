@@ -30,8 +30,10 @@ class App extends Component {
     if (sound.volume > 0 && this.state.playAllSounds) {
       sd.play();
       sd.volume = sound.volume/10; 
+      sound.playStatus = true;
     } else {
       sd.pause();
+      sound.playStatus = false;
     }
     const sounds = [...this.state.sounds];
     sounds[soundIndex] = sound;
@@ -53,7 +55,7 @@ class App extends Component {
             id = {sound.id}
             source = {sound.mp3File}
             volume = {sound.volume}
-            doesplay = {sound.playStatus}
+            doesPlay = {sound.playStatus.toString()}
             changed = {(event) => this.volumeChangeHandler( event, sound.id)} />
 
         } )}
