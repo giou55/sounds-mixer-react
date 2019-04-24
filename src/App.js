@@ -9,7 +9,8 @@ import Sound from './Sound/Sound';
 class App extends Component {
 
   state = {
-    playAllSounds: true,
+    playAllStatus: true,
+    buttonText: 'PLAY',
     sounds: [
       { id: '11', title: 'birds', mp3File: mainBirds, volume: '0', playStatus: false},
       { id: '22', title: 'rain', mp3File: mainRain, volume: '0', playStatus: false},
@@ -17,7 +18,7 @@ class App extends Component {
     ]
   };
 
-  volumeChangeHandler = ( event, id) => {
+  changeVolume = ( event, id) => {
     const soundIndex = this.state.sounds.findIndex(s => {
       return s.id === id;
     });
@@ -27,7 +28,7 @@ class App extends Component {
     sound.volume = event.target.value;
 
     let sd = document.getElementById(id); 
-    if (sound.volume > 0 && this.state.playAllSounds) {
+    if (sound.volume > 0 && this.state.playAllStatus) {
       sd.play();
       sd.volume = sound.volume/10; 
       sound.playStatus = true;
@@ -40,9 +41,23 @@ class App extends Component {
     this.setState({sounds: sounds});
   }
 
-  playAllSoundsHandler = () => {
-    const doesPlay = this.state.playAllSounds;
-    this.setState({playAllSounds: !doesPlay});
+  playAllSounds = () => {
+    const doesPlay = this.state.playAllStatus;
+    this.setState({playAllStatus: !doesPlay});
+    const playingSounds = this.state.sounds.filter(s => {
+      return s.volume > 0;
+    });
+    playingSounds.forEach(s => {
+      let ID = s.id;
+      let sd = document.getElementById(ID); 
+      if(s.playStatus){
+        sd.pause();
+        s.playStatus = false;
+      } else {
+        sd.play();
+        s.playStatus = true;
+      }
+    })
   }
 
   render() {
@@ -56,14 +71,17 @@ class App extends Component {
             source = {sound.mp3File}
             volume = {sound.volume}
             doesPlay = {sound.playStatus.toString()}
-            changed = {(event) => this.volumeChangeHandler( event, sound.id)} />
+            changed = {(event) => this.changeVolume( event, sound.id)} />
 
         } )}
       </div>
     );
     return (
       <div className="App">
-        <button className="playButton" onClick={this.playAllSoundsHandler}>PLAY <i className='fas fa-play'></i></button>
+        <button className="playButton" 
+                onClick={this.playAllSounds}>{this.state.playAllStatus ? 'PAUSE' : 'PLAY'}
+          <i className={this.state.playAllStatus ? 'fas fa-pause' : 'fas fa-play'}></i>
+        </button>
         {sounds}
       </div>
 
