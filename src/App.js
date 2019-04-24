@@ -9,7 +9,7 @@ import Sound from './Sound/Sound';
 class App extends Component {
 
   state = {
-    playAllStatus: true,
+    playAllStatus: false,
     buttonText: 'PLAY',
     sounds: [
       { id: '11', title: 'birds', mp3File: mainBirds, volume: '0', playStatus: false},
