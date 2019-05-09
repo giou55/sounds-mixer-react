@@ -5,8 +5,8 @@
   width: 92%;
 }
 .playButton {
-  width: 10%;
   text-align: center;
   font-size: 34px;
   color: green;
+  padding: 4px;
 }
