@@ -4,7 +4,7 @@ import './Sound.css';
 const Sound = (props) => {
     return (
         <div className="SoundContainer">
-            <h3>{props.title}</h3>
+            <h4>{props.title}</h4>
             <div className="SliderContainer">
                 <span>
                     <p>Volume: {props.volume} <br></br> doesPlay: {props.doesPlay}</p>

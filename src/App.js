@@ -3,6 +3,7 @@ import './App.css';
 import mainBirds from './assets/main-birds.mp4';
 import mainRain from './assets/main-rain.mp4';
 import mainWaves from './assets/main-waves.mp4';
+import cricket from './assets/cricket.mp3';
 
 import Sound from './Sound/Sound';
 
@@ -14,7 +15,8 @@ class App extends Component {
     sounds: [
       { id: '11', title: 'birds', mp3File: mainBirds, volume: '0', playStatus: false},
       { id: '22', title: 'rain', mp3File: mainRain, volume: '0', playStatus: false},
-      { id: '33', title: 'waves', mp3File: mainWaves, volume: '0', playStatus: false}
+      { id: '33', title: 'waves', mp3File: mainWaves, volume: '0', playStatus: false},
+      { id: '44', title: 'cricket', mp3File: cricket, volume: '0', playStatus: false}
     ]
   };
 

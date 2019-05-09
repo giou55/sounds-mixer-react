@@ -1,12 +1,16 @@
 .App {
   background-color: rgb(250, 165, 165);
-  margin: 2%;
-  padding: 2%; 
-  width: 92%;
+  margin: 1%;
+  padding: 1%; 
+  width: 96%;
 }
 .playButton {
   text-align: center;
-  font-size: 34px;
+  font-size: 20px;
   color: green;
   padding: 4px;
+}
+h4 {
+  margin: 0;
+  margin-top: 15px;
 }
