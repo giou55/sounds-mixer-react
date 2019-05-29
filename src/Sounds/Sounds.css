@@ -1,5 +1,5 @@
 .SoundContainer {
-    width: 100%;
+  display: flex;
 }
 .SliderContainer {
     width: 50%;

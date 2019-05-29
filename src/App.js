@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
+
 import mainBirds from './assets/main-birds.mp4';
 import mainRain from './assets/main-rain.mp4';
 import mainWaves from './assets/main-waves.mp4';
 import cricket from './assets/cricket.mp3';
+import piano from './assets/piano.mp3';
 
-import Sound from './Sound/Sound';
+import Sounds from './Sounds/Sounds';
+import Header from './Header/Header';
 
 class App extends Component {
 
@@ -16,7 +19,8 @@ class App extends Component {
       { id: '11', title: 'birds', mp3File: mainBirds, volume: '0', playStatus: false},
       { id: '22', title: 'rain', mp3File: mainRain, volume: '0', playStatus: false},
       { id: '33', title: 'waves', mp3File: mainWaves, volume: '0', playStatus: false},
-      { id: '44', title: 'cricket', mp3File: cricket, volume: '0', playStatus: false}
+      { id: '44', title: 'cricket', mp3File: cricket, volume: '0', playStatus: false},
+      { id: '55', title: 'piano', mp3File: piano, volume: '0', playStatus: false}
     ]
   };
 
@@ -62,29 +66,38 @@ class App extends Component {
     })
   }
 
+  isDownloading = () => {
+    console.log("Sound is downloading!")
+  }
+  isReady = () => {
+    console.log("Sound is ready to play!")
+  }
+
   render() {
     let sounds = (
       <div>
         {this.state.sounds.map( ( sound, index ) => {
-          return <Sound
+          return <Sounds
             title = {sound.title}
             key = {sound.id}
             id = {sound.id}
             source = {sound.mp3File}
             volume = {sound.volume}
             doesPlay = {sound.playStatus.toString()}
-            changed = {(event) => this.changeVolume( event, sound.id)} />
+            changed = {(event) => this.changeVolume( event, sound.id)}
+            isDownloading = {this.isDownloading}
+            isReady = {this.isReady} />
 
         } )}
       </div>
     );
     return (
       <div className="App">
-        <button className="playButton" 
-                onClick={this.playAllSounds}>{this.state.playAllStatus ? 'PAUSE' : 'PLAY'}
-          <i className={this.state.playAllStatus ? 'fas fa-pause' : 'fas fa-play'}></i>
-        </button>
-        {sounds}
+
+      <Header playAllSounds={this.playAllSounds} playAllStatus={this.state.playAllStatus} />
+
+      {sounds}
+
       </div>
 
     );
