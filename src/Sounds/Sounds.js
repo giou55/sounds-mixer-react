@@ -4,6 +4,7 @@ import './Sounds.css';
 const Sounds = (props) => {
     return (
         <div className="OneSoundContainer">
+        <img src={props.img} alt=""></img>
             <h4>{props.title}</h4>
             <div className="SliderContainer">
                 <span>

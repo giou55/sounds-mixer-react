@@ -1,5 +1,8 @@
 .OneSoundContainer {
-  flex: 30%;
+  flex: 0 0 50%;
+}
+.OneSoundContainer img {
+  width:15%;
 }
 .SliderContainer {
     width: 90%;
