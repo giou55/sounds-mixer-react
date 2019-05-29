@@ -1,8 +1,8 @@
-.SoundContainer {
-  display: flex;
+.OneSoundContainer {
+  flex: 30%;
 }
 .SliderContainer {
-    width: 50%;
+    width: 90%;
 }
 .slider {
     -webkit-appearance: none;

@@ -3,7 +3,7 @@ import './Sounds.css';
 
 const Sounds = (props) => {
     return (
-        <div className="SoundContainer">
+        <div className="OneSoundContainer">
             <h4>{props.title}</h4>
             <div className="SliderContainer">
                 <span>
@@ -14,7 +14,7 @@ const Sounds = (props) => {
                 </span>
             </div>
             <div>
-                <audio id={props.id} preload="auto" loop onProgress={props.isDownloading} onCanPlay={props.isReady}>
+                <audio id={props.id} preload="auto" loop>
                     <source 
                         src={props.source}
                         type="audio/mp4" />

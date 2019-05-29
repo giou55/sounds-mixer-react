@@ -66,16 +66,9 @@ class App extends Component {
     })
   }
 
-  isDownloading = () => {
-    console.log("Sound is downloading!")
-  }
-  isReady = () => {
-    console.log("Sound is ready to play!")
-  }
-
   render() {
     let sounds = (
-      <div>
+      <div className="SoundsContainer">
         {this.state.sounds.map( ( sound, index ) => {
           return <Sounds
             title = {sound.title}
@@ -84,9 +77,7 @@ class App extends Component {
             source = {sound.mp3File}
             volume = {sound.volume}
             doesPlay = {sound.playStatus.toString()}
-            changed = {(event) => this.changeVolume( event, sound.id)}
-            isDownloading = {this.isDownloading}
-            isReady = {this.isReady} />
+            changed = {(event) => this.changeVolume( event, sound.id)} />
 
         } )}
       </div>
@@ -94,9 +85,9 @@ class App extends Component {
     return (
       <div className="App">
 
-      <Header playAllSounds={this.playAllSounds} playAllStatus={this.state.playAllStatus} />
+        <Header playAllSounds={this.playAllSounds} playAllStatus={this.state.playAllStatus} />
 
-      {sounds}
+        {sounds}
 
       </div>
 
