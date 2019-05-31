@@ -6,12 +6,14 @@ import mainRain from './assets/main-rain.mp4';
 import mainWaves from './assets/main-waves.mp4';
 import cricket from './assets/cricket.mp3';
 import piano from './assets/piano.mp3';
+import chimes from './assets/chimes.mp3';
 
 import bird from './assets/bird.jpg';
 import pianoImg from './assets/piano.jpg';
 import cricketImg from './assets/cricket.png';
 import waves from './assets/waves.png';
 import rain from './assets/rain.png';
+import chimesImg from './assets/chimes.jpg';
 
 import Sounds from './Sounds/Sounds';
 import Header from './Header/Header';
@@ -26,7 +28,8 @@ class App extends Component {
       { id: '22', title: 'rain', mp3File: mainRain, img: rain, volume: '0', playStatus: false},
       { id: '33', title: 'waves', mp3File: mainWaves, img: waves, volume: '0', playStatus: false},
       { id: '44', title: 'cricket', mp3File: cricket, img: cricketImg, volume: '0', playStatus: false},
-      { id: '55', title: 'piano', mp3File: piano, img: pianoImg, volume: '0', playStatus: false}
+      { id: '55', title: 'piano', mp3File: piano, img: pianoImg, volume: '0', playStatus: false},
+      { id: '66', title: 'wind chimes', mp3File: chimes, img: chimesImg, volume: '0', playStatus: false}
     ]
   };
 

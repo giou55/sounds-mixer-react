@@ -5,13 +5,12 @@
 }
 .App {
   background-color: rgb(250, 165, 165);
-  margin: 1%;
-  padding: 1%; 
-  width: 96%;
+  width: 100%;
 }
 .SoundsContainer {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
   width: 100%;
 }
 
