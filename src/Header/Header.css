@@ -2,8 +2,9 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    width: 100%;
-    background: coral;
+    width: 60%;
+    margin: 0 auto;
+    background: transparent;
 }
 h1 {
     flex: 0 1 100%;
