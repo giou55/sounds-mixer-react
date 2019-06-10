@@ -8,7 +8,7 @@ const Sounds = (props) => {
             <h4>{props.title}</h4>
             <div className="SliderContainer">
                 <span>
-                    <p>Volume: {props.volume} <br></br> doesPlay: {props.doesPlay}</p>
+                    <p>Volume: {props.volume}</p>
                     <input type="range" onChange={props.changed} min="0" max="20" 
                            defaultValue={props.volume} className="slider">
                     </input>
