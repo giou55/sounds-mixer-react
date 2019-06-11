@@ -1,5 +1,6 @@
 {
   "name": "SoundsMix",
+  "homepage": "https://www.giourmetakis.gr/projects/soundsmix",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
