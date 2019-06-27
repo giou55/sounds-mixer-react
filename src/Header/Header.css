@@ -9,13 +9,41 @@
 h1 {
     flex: 0 1 100%;
     text-align: center;
-
+    margin: 15px auto;
 }
 .btn {
     text-align: center;
     font-size: 20px;
-    color: green;
-    flex: 0 1 15%;
-    margin: 10px; 
+    color: white;
+    flex: 0 1 20%;
+    margin: 4px; 
     padding: 8px;
+    border: none;
+    border-radius: 10px;
+    background-color: black;
 }
+
+@media screen and (max-width: 1200px) {
+
+  
+}
+
+@media screen and (max-width: 1100px) {
+
+}
+
+@media screen and (max-width: 1000px) {
+    .btn {
+        flex: 0 1 35%;
+    }
+}
+  
+@media screen and (max-width: 600px) {
+    .btn {
+        flex: 0 1 55%;
+   }
+}
+  
+  
+  
+  
