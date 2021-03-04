@@ -1,37 +1,34 @@
 .header {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    width: 60%;
-    margin: 0 auto;
-    background: transparent;
-}
-h1 {
-    flex: 0 1 100%;
-    text-align: center;
-    margin: 15px auto;
-}
-.btn {
-    text-align: center;
-    font-size: 20px;
-    color: white;
-    flex: 0 1 20%;
-    margin: 4px; 
-    padding: 8px;
-    border: none;
-    border-radius: 10px;
-    background-color: black;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	width: 70%;
+	margin: 0 auto;
+	background: transparent;
 }
 
-@media screen and (max-width: 1000px) {
-    .btn {
-        flex: 0 1 35%;
-    }
+h1 {
+	flex: 0 1 100%;
+	text-align: center;
+	margin: 15px auto;
 }
-  
-@media screen and (max-width: 600px) {
-    .btn {
-        flex: 0 1 55%;
-   }
+
+.btn {
+	text-align: center;
+	font-size: 20px;
+	color: white;
+	margin: 4px;
+	padding: 0.5rem 1.2rem;
+	border: none;
+	border-radius: 10px;
+	background-color: black;
+	cursor: pointer;
 }
-  
+
+.btn:focus {
+	outline: none;
+}
+
+i {
+	margin-left: 1rem;
+}

@@ -1,61 +1,71 @@
 .OneSoundContainer {
-  flex: 1 1 33%;
-  justify-content: center;
-  text-align: center;
-  margin-top: 4%;
+	flex: 0 1 100%;
+	justify-content: center;
+	text-align: center;
+	margin-top: 1rem;
+	margin-bottom: 2rem;
 }
 .OneSoundContainer img {
-  width: 20%;
+	width: 20%;
 }
 .SliderContainer {
-    width: 90%;
+	width: 90%;
 }
 .slider {
-    -webkit-appearance: none;
-    width: 80%;
-    height: 10px;
-    border-radius: 5px;
-    background: #b5bb8b;
-    outline: none;
-    opacity: 0.7;
-    -webkit-transition: .2s;
-    transition: opacity .2s;
-  }
-  
-  .slider:hover {
-    opacity: 1;
-  }
-  
-  .slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: #222;
-    cursor: pointer;
-  }
-  
-  .slider::-moz-range-thumb {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background: #4CAF50;
-    cursor: pointer;
-  }
+	-webkit-appearance: none;
+	width: 80%;
+	height: 10px;
+	border-radius: 5px;
+	background: #b5bb8b;
+	outline: none;
+	opacity: 0.7;
+	-webkit-transition: 0.2s;
+	transition: opacity 0.2s;
+}
 
-  @media screen and (max-width: 1200px) {
-    .slider {
-      width: 90%;
-    }
-  }
-  @media screen and (max-width: 1100px) {
-    .OneSoundContainer {
-      flex: 1 1 50%;
-    }
-  }
-  @media screen and (max-width: 600px) {
-    .OneSoundContainer {
-      flex: 1 1 100%;
-    }
-  }
+.slider:hover {
+	opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background: #222;
+	cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	background: #4caf50;
+	cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+	.OneSoundContainer {
+		flex: 0 1 50%;
+		margin-top: 1rem;
+		margin-bottom: 2rem;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.OneSoundContainer {
+		flex: 0 1 50%;
+		margin-top: 0;
+		margin-bottom: 1rem;
+	}
+}
+
+@media screen and (min-width: 1400px) {
+	.OneSoundContainer {
+		flex: 0 1 33%;
+		margin-top: 1rem;
+		margin-bottom: 2rem;
+	}
+}
+

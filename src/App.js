@@ -28,7 +28,6 @@ class App extends Component {
 
   state = {
     playAllStatus: false,
-    buttonText: 'PLAY',
     sounds: [
       { id: '11', title: 'birds', mp3File: birds, img: birdImg, volume: '0', playStatus: false},
       { id: '22', title: 'rain', mp3File: rain, img: rainImg, volume: '0', playStatus: false},
