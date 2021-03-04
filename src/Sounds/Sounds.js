@@ -4,12 +4,16 @@ import "./Sounds.css";
 const Sounds = (props) => {
 	return (
 		<div className="OneSoundContainer">
-			<div>
-				<div></div>
-				<div></div>
+			<div className="imageContainer">
+				<div className="dark-image" style={{ opacity: props.opacity }}>
+					<img src={props.imgDark} alt=""></img>
+				</div>
+				<div className="light-image">
+					<img src={props.imgLight} alt=""></img>
+				</div>
 			</div>
 
-			<img src={props.img} alt=""></img>
+			{/* <img src={props.img} alt=""></img> */}
 			<h4>{props.title}</h4>
 			<div className="SliderContainer">
 				<span>
